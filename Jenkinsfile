@@ -34,6 +34,7 @@ pipeline{
         }
         stage('Containerize (Push to Dockerhub and pull from Dockerhub)') {
             steps {
+                sh "export PATH=$PATH:/usr/local/bin/docker"
                 sh "docker build -t calculator ."
                 withCredentials([usernamePassword(credentialsId: 'docker_HUb', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'

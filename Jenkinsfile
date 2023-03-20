@@ -26,7 +26,7 @@ pipeline{
         
         stage('Test'){
             steps{
-                 dir('/Users/chinmaysharma/Desktop') {
+                 dir('/Users/chinmaysharma/Desktop/CALCULATOR_DevOps-master') {
                     sh "mvn test"
                 }
                 

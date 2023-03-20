@@ -37,7 +37,7 @@ pipeline{
             steps {
 //                 sh "export PATH=$PATH:/usr/local/bin/docker"
                 sh "docker build -t calculator ."
-                withCredentials([usernamePassword(credentialsId: 'docker_HUb', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker_hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                     sh 'docker tag calculator chinmaysharma/miniproj:latest'
                     sh 'docker push chinmaysharma/miniproj:latest'

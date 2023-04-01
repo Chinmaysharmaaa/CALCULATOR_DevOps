@@ -16,3 +16,5 @@ Docker : to containerize and create docker image
 Ansible : To deploy docker container
 
 ELK stack : Used kibana to view logs in GUI
+
+Submitted by : Chinmay
